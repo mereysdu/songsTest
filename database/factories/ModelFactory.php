@@ -22,3 +22,25 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Singer::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->userName.' '.$faker->lastName,
+    ];
+});
+
+$factory->define(App\Song::class, function (Faker\Generator $faker) {
+    return [
+        'title' => 'song - '.$faker->name,
+        'year' => $faker->year,
+        'duration' =>  random_int(120,500),
+        'genre_id' => random_int(1,12),
+        'singer_id' => random_int(1,20),
+    ];
+});
+
+$factory->define(App\Genre::class, function (Faker\Generator $faker) {
+    return [
+        'name' => 'genre - '.$faker->unique()->monthName,
+    ];
+});

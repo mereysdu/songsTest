@@ -1,0 +1,32 @@
+.tableList {
+    width: 80%;
+    margin-top: 50px;
+    display: inline;
+}
+
+#page-numbers {
+    padding-left: 112px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+#page-numbers > li {
+    margin-right: 0.3em;
+    padding: 5px 15px 5px 15px;
+    border: dashed cadetblue;
+    color: blue;
+    user-select: none;
+    cursor: pointer;
+}
+
+#table-songs {
+    display: inline;
+}
+#select-filter {
+    display: inline;
+}
+#select-filter-select {
+    margin-left: 20px;
+    position: relative;
+}

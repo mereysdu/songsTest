@@ -16,4 +16,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/songs', 'SongController@songs');
+Route::get('/songs', 'SongController@read');
+Route::post('/songs', 'SongController@create');
+Route::get('/genres', 'SongController@getGenres');
+Route::get('/singers', 'SongController@getSingers');

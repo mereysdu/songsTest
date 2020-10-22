@@ -4,7 +4,6 @@ use Illuminate\Database\Seeder;
 
 class SingersTableSeeder extends Seeder
 {
-    private $data = [];
     /**
      * Run the database seeds.
      *
@@ -12,16 +11,8 @@ class SingersTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
-
-        for ($i=0; $i < 50; $i++) {
-            $data[] = [
-                'name' => $faker->userName.' '.$faker->lastName,
-            ];
-        }
-
-        foreach ($data as $singer) {
-            \App\Singer::insert($singer);
-        }
+        factory(App\Singer::class, 20)->create()->each(function ($singer){
+           $singer->songs()->save(factory(App\Song::class,140)->make());
+        });
     }
 }

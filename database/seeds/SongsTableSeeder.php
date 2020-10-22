@@ -11,10 +11,21 @@ class SongsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('songs')->insert([
-            'name' => str_random(10),
-            'email' => str_random(10).'@gmail.com',
-            'password' => bcrypt('secret'),
-        ]);
+//        $faker = Faker\Factory::create();
+//
+//
+//        for ($i=0; $i < 100; $i++) {
+//            $data[] = [
+//                'title' => $faker->title,
+//                'year' => $faker->year,
+//                'duration' =>  random_int(120,500),
+//                'genre_id' => random_int(1,100),
+//                'singer_id' => random_int(1,100),
+//            ];
+//        }
+//
+//        foreach ($data as $song) {
+//            \App\Song::insert($song);
+//        }
     }
 }
